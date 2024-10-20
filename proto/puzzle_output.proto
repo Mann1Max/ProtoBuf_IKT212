@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+message PuzzleOutput {
+    repeated Solution solutions = 1;
+
+    message Solution {
+        int32 puzzle_id = 1;
+        bool solved = 2;
+        repeated PathStep path = 3;
+
+        message PathStep {
+            int32 x = 1;
+            int32 y = 2;
+            int32 direction = 3;
+        }
+    }
+}

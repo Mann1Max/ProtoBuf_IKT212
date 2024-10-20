@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+message PuzzleInput {
+    repeated Puzzle puzzles = 1;
+
+    message Puzzle {
+        int32 puzzle_id = 1;
+        int32 width = 2;
+        int32 height = 3;
+        repeated Row rows = 4;
+
+        message Row {
+            repeated string symbols = 1;
+            int32 end_value = 2; // Ensure this line is present
+        }
+    }
+}
